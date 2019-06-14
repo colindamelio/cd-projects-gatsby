@@ -82,10 +82,12 @@ export const projectItems = [
 export const articles = [
   {
     title: "Exploring State Management in React",
+    desc: "Keeping our React state immutable.",
     href: "https://hackeryou.com/blog/exploring-state-management-in-react",
   },
   {
-    title: "React Destructuring Techniques",
+    title: "Destructuring Techniques in React",
+    desc: "Safeguarding and organizing props and state.",
     href: "https://hackeryou.com/blog/react-destructuring-techniques",
   },
 ];
