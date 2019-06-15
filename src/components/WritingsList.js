@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { articles } from "../data";
+import { StaticQuery, graphql, Link } from "gatsby";
 
 const List = styled.ul`
   display: flex;
@@ -24,16 +24,35 @@ const ListItem = styled.li`
 `;
 
 const WritingsList = () => (
-  <List>
-    {articles.map((article, i) => (
-      <ListItem key={i}>
-        <a href={article.href} target="_blank">
-          {article.title}
-        </a>
-        <p>{article.desc}</p>
-      </ListItem>
-    ))}
-  </List>
+  <StaticQuery
+    query={POST_LIST_QUERY}
+    render={({ allMarkdownRemark }) => (
+      <List>
+        {allMarkdownRemark.edges.map(edge => (
+          <ListItem key={edge.node.frontmatter.slug}>
+            <Link to={`/writings${edge.node.frontmatter.slug}`}>
+              {edge.node.frontmatter.title}
+            </Link>
+          </ListItem>
+        ))}
+      </List>
+    )}
+  />
 );
+
+const POST_LIST_QUERY = graphql`
+  query blogPosts {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default WritingsList;
