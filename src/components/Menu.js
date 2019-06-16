@@ -29,7 +29,12 @@ const Menu = ({ items }) => (
           </NavItem>
         ) : (
           <NavItem key={i}>
-            <a href={item.href} aria-label={item.label} target="_blank">
+            <a
+              href={item.href}
+              aria-label={item.label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {item.title}
             </a>
           </NavItem>
