@@ -1,4 +1,5 @@
 import React from "react";
+import HomeButton from "../components/HomeButton";
 import styled from "styled-components";
 import { StaticQuery, graphql, Link } from "gatsby";
 
@@ -24,20 +25,24 @@ const ListItem = styled.li`
 `;
 
 const WritingsList = () => (
-  <StaticQuery
-    query={POST_LIST_QUERY}
-    render={({ allMarkdownRemark }) => (
-      <List>
-        {allMarkdownRemark.edges.map(edge => (
-          <ListItem key={edge.node.frontmatter.slug}>
-            <Link to={`/writings${edge.node.frontmatter.slug}`}>
+  <div>
+    <StaticQuery
+      query={POST_LIST_QUERY}
+      render={({ allMarkdownRemark }) => (
+        <List>
+          {allMarkdownRemark.edges.map(edge => (
+            <ListItem key={edge.node.frontmatter.slug}>
               {edge.node.frontmatter.title}
-            </Link>
-          </ListItem>
-        ))}
-      </List>
-    )}
-  />
+              <p>{edge.node.excerpt}</p>
+              <Link to={`/writings${edge.node.frontmatter.slug}`}>
+                Read More
+              </Link>
+            </ListItem>
+          ))}
+        </List>
+      )}
+    />
+  </div>
 );
 
 const POST_LIST_QUERY = graphql`
@@ -45,6 +50,7 @@ const POST_LIST_QUERY = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
+          excerpt
           frontmatter {
             title
             slug

@@ -4,7 +4,7 @@ import WritingsList from "../components/WritingsList";
 
 const Writings = () => (
   <div>
-    <HomeButton />
+    <HomeButton path="/" />
     <WritingsList />
   </div>
 );

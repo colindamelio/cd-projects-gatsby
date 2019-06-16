@@ -8,8 +8,8 @@ const StyledLink = styled(Link)`
   text-align: center;
 `;
 
-const HomeButton = () => (
-  <StyledLink to="/">
+const HomeButton = props => (
+  <StyledLink to={props.path}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"

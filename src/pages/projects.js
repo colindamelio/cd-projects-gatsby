@@ -4,7 +4,7 @@ import ProjectsList from "../components/ProjectsList";
 
 const Projects = () => (
   <div>
-    <HomeButton />
+    <HomeButton path="/" />
     <ProjectsList />
   </div>
 );
