@@ -1,11 +1,11 @@
 import React from "react";
 import HomeButton from "../components/HomeButton";
-import WritingsList from "../components/WritingsList";
+import Posts from "../components/Posts";
 
 const Writings = () => (
   <div>
     <HomeButton path="/" />
-    <WritingsList />
+    <Posts />
   </div>
 );
 

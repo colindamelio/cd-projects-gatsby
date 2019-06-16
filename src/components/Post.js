@@ -8,6 +8,9 @@ const PostTitle = styled.h1`
   text-align: center;
 `;
 const PostContent = styled.div`
+  h2 {
+    margin-bottom: 10px;
+  }
   p {
     margin-bottom: 15px;
   }
@@ -26,6 +29,7 @@ const Post = ({ data }) => (
         lineHeight: "1.5",
         maxWidth: "700px",
         margin: "30px auto",
+        padding: "25px",
       }}
       dangerouslySetInnerHTML={{
         __html: data.markdownRemark.html,

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import Menu from "../components/Menu";
-import SEO from "../components/seo";
+import SEO from "../components/Seo";
 
 import { menuItems } from "../data";
 

@@ -78,16 +78,3 @@ export const projectItems = [
       "React/Redux application that integrates geo-location and Google Maps Platform to search for Honda/Acura dealerships.",
   },
 ];
-
-export const articles = [
-  {
-    title: "Exploring State Management in React",
-    desc: "Keeping our React state immutable.",
-    href: "https://hackeryou.com/blog/exploring-state-management-in-react",
-  },
-  {
-    title: "Destructuring Techniques in React",
-    desc: "Safeguarding and organizing props and state.",
-    href: "https://hackeryou.com/blog/react-destructuring-techniques",
-  },
-];

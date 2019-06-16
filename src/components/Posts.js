@@ -36,7 +36,7 @@ const Disclaimer = styled.p`
   }
 `;
 
-const WritingsList = () => (
+const Posts = () => (
   <div>
     <StaticQuery
       query={POST_LIST_QUERY}
@@ -79,4 +79,4 @@ const POST_LIST_QUERY = graphql`
   }
 `;
 
-export default WritingsList;
+export default Posts;
