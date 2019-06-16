@@ -93,8 +93,11 @@ Unfortunately, this will result in an error because the `push()` method only ret
 addAnimal = () => {
 
   const animalsCopy = this.state.animals; 
-  // best practice to always make a copy of your state item before any manipulation.
-  // We want to know which piece of data has changed so we don't want to overwrite the previous version of state.
+  // best practice to always make a copy of 
+  // your state item before any manipulation.
+
+  // We want to know which piece of data has changed 
+  // so we don't want to overwrite the previous version of state.
     
   animalsCopy.push("badger"); 
   // push our new animal item to the copy of the state array.

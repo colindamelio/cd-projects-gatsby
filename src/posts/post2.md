@@ -115,10 +115,4 @@ With these few enhancements we’ve created a strong foundation for both readabl
 
 Happy Coding!
 
-## Additional resources
-
-[MDN -  Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-[Exploring JS - Destructuring](http://exploringjs.com/es6/ch_destructuring.html)	
-
-
 
