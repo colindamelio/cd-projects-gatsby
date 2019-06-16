@@ -2,9 +2,8 @@
 slug: '/state-immutability-in-react'
 title: 'Exploring State Management in React'
 date: '2019-05-08'
+src: 'https://hackeryou.com/blog/exploring-state-management-in-react'
 ---
-
-# Treating state as immutable with React
 
 In this post we’ll be exploring state management within React, specifically around how to safely use the `setState()` method to update a component’s state. We’ll identify potential pitfalls and how to resolve them so that we’ll be able to get a better understanding of state management. It’s important to note that this post assumes a working knowledge of React, ES6 features, and JavaScript array methods. If you’re not there yet - our part-time JavaScript courses will teach you everything you need to explore these topics. 
 

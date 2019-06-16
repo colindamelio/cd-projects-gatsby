@@ -1,26 +1,38 @@
 import React from "react";
-import HomeButton from "../components/HomeButton";
 import styled from "styled-components";
 import { StaticQuery, graphql, Link } from "gatsby";
 
 const List = styled.ul`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
+  max-width: 600px;
+  margin: 25px auto;
+  padding: 30px;
+  font-family: "Open Sans", sans-serif;
+`;
+
+const PostLink = styled(Link)`
+  font-size: 23px;
+  font-weight: 700;
+`;
+
+const Date = styled.em`
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+`;
+
+const Excerpt = styled.p`
+  margin: 10px 0;
+  font-weight: 300;
 `;
 
 const ListItem = styled.li`
-  font-size: 30px;
-  padding: 20px 0;
-  font-weight: 900;
-  text-align: center;
+  margin: 35px 0;
+`;
 
-  p {
-    font-size: 20px;
-    font-weight: normal;
-    margin-top: 10px;
+const Disclaimer = styled.p`
+  font-size: 14px;
+  a {
+    color: #e44e48;
   }
 `;
 
@@ -32,11 +44,15 @@ const WritingsList = () => (
         <List>
           {allMarkdownRemark.edges.map(edge => (
             <ListItem key={edge.node.frontmatter.slug}>
-              {edge.node.frontmatter.title}
-              <p>{edge.node.excerpt}</p>
-              <Link to={`/writings${edge.node.frontmatter.slug}`}>
-                Read More
-              </Link>
+              <PostLink to={`/writings${edge.node.frontmatter.slug}`}>
+                {edge.node.frontmatter.title}
+              </PostLink>
+              <Date>{edge.node.frontmatter.date}</Date>
+              <Excerpt>{edge.node.excerpt}</Excerpt>
+              <Disclaimer>
+                Part of series at{" "}
+                <a href={edge.node.frontmatter.src}>@hackerYou</a>
+              </Disclaimer>
             </ListItem>
           ))}
         </List>
@@ -50,10 +66,12 @@ const POST_LIST_QUERY = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 200)
           frontmatter {
             title
+            src
             slug
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }

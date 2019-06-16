@@ -3,7 +3,7 @@
 const path = require("path");
 
 exports.createPages = ({ graphql, actions }) => {
-  return new Promise ((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     graphql(`
       {
         allMarkdownRemark {
@@ -17,17 +17,17 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(results => {
-      results.data.allMarkdownRemark.edges.forEach(({node}) => {
+      results.data.allMarkdownRemark.edges.forEach(({ node }) => {
         const { createPage } = actions;
         createPage({
           path: `/writings${node.frontmatter.slug}`,
-          component: path.resolve("./src/components/BlogLayout.js"),
+          component: path.resolve("./src/components/Post.js"),
           context: {
             slug: node.frontmatter.slug,
-          }
+          },
         });
-      })
+      });
       resolve();
-    })
+    });
   });
 };

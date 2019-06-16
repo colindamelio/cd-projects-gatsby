@@ -2,9 +2,8 @@
 slug: '/destructuring-state-and-props'
 title: 'React Destructuring Techniques '
 date: '2019-05-29'
+src: 'https://hackeryou.com/blog/exploring-state-management-in-react'
 ---
-
-# Advanced destructuring techniques 
 
 In this post we’ll be exploring a few of the ways we can destructure data in React applications. By using the destructuring syntax, we can unpack values from arrays, or properties from objects, into distinct variables.
 
