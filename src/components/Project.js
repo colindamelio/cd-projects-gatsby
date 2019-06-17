@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Image from "./Image";
 import styled from "styled-components";
+import { fadeIn } from "../lib/animations";
 import { projectItems } from "../data";
 
 const Container = styled.ul`
@@ -17,10 +18,11 @@ const Item = styled.li`
   max-width: 400px;
   margin-bottom: 25px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  animation: ${fadeIn} 5s ease;
 `;
 
 const Overlay = styled.a`
-  display: ${props => (props.loaded ? "flex" : "none")}
+  display: ${props => (props.loaded ? "flex" : "none")};
   flex-direction: column;
   position: absolute;
   right: 0;
