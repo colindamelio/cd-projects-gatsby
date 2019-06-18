@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Image from "./Image";
 import styled from "styled-components";
 import { fadeIn } from "../lib/animations";
@@ -18,7 +18,7 @@ const Item = styled.li`
   max-width: 400px;
   margin-bottom: 25px;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  animation: ${fadeIn} 5s ease;
+  animation: ${fadeIn} 2s ease;
 `;
 
 const Overlay = styled.a`
@@ -40,44 +40,34 @@ const Tag = styled.h3`
 const Title = styled.h2``;
 const Description = styled.p``;
 
-class Project extends Component {
-  state = {
-    isLoaded: false,
+const Project = () => {
+  const [isLoaded, resolveLoad] = useState(false);
+
+  const renderImage = () => {
+    resolveLoad(true);
   };
 
-  renderImage = () => {
-    this.setState({
-      isLoaded: true,
-    });
-  };
-
-  render() {
-    return (
-      <Container>
-        {projectItems.map((project, i) => {
-          return (
-            <Item key={i}>
-              <Image
-                src={project.src}
-                alt={project.alt}
-                onLoad={this.renderImage}
-                loading="lazy"
-              />
-              <Overlay
-                href={project.href}
-                target="_blank"
-                loaded={this.state.isLoaded}
-              >
-                <Title>{project.title}</Title>
-                {project.company && <Tag>{`Built at ${project.company}`}</Tag>}
-                <Description>{project.desc}</Description>
-              </Overlay>
-            </Item>
-          );
-        })}
-      </Container>
-    );
-  }
-}
+  return (
+    <Container>
+      {projectItems.map((project, i) => {
+        return (
+          <Item key={i}>
+            <Image
+              src={project.src}
+              alt={project.alt}
+              onLoad={renderImage}
+              loading="lazy"
+            />
+            <Overlay href={project.href} target="_blank" loaded={isLoaded}>
+              <Title>{project.title}</Title>
+              {project.company && <Tag>{`Built at ${project.company}`}</Tag>}
+              <Description>{project.desc}</Description>
+            </Overlay>
+          </Item>
+        );
+      })}
+    </Container>
+  );
+};
 
 export default Project;
