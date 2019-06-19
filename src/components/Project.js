@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Image from "./Image";
+import Image from "./image";
 import styled from "styled-components";
 import { fadeIn } from "../lib/animations";
 import { projectItems } from "../data";
