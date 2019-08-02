@@ -109,7 +109,9 @@ console.log(fullName);  // "Margaret Atwood"
 
 The simplest way to interpret this syntax is to treat anything left of the `:` as what you want to change and anything to the right as what it will be changed to. In this example we update a key like `name` to instead be stored in a variable called `fullName` as it is more descriptive and representative of what data is being stored. 
 
-With these few enhancements we’ve created a strong foundation for both readable and scalable code. Destructuring with `arrays` and `objects` doesn’t stop with these few examples and it’s worthwhile to explore some of the others through the resources provided below.
+With these few enhancements we’ve created a strong foundation for both readable and scalable code. Destructuring with `arrays` and `objects` doesn’t stop with these few examples and it’s worthwhile to explore some of the others. through the resources provided below.
+
+[MDN - Destructuring assignment Exploring JS - Destructuring](https://exploringjs.com/es6/ch_destructuring.html)
 
 Happy Coding!
 
