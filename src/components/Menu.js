@@ -15,7 +15,7 @@ const NavItem = styled.li`
   text-align: center;
 
   a {
-    font-size: 30px;
+    font-size: 22px;
   }
 `;
 

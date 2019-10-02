@@ -31,11 +31,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [
-          `Open Sans Condensed\:300`,
-          `Open Sans\:400,400i,700, 300`,
-          `Lato\:400,900`,
-        ],
+        fonts: [`Open Sans\:400,400i,700, 300`, `Lato\:400,900`],
         display: "swap",
       },
     },
